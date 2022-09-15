@@ -5,6 +5,9 @@ function resolve (dir) {
   return path.join(__dirname, dir)
 }
 
+console.log('NODE_ENV', process.env.NODE_ENV)
+console.log('VUE_APP_PREVIEW', process.env.VUE_APP_PREVIEW)
+
 module.exports = defineConfig({
   transpileDependencies: true,
   css: {
