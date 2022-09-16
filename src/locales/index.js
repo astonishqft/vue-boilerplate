@@ -32,12 +32,14 @@ function setI18nLanguage (lang) {
   return lang
 }
 
+// 这个方法之所以要写成async方法，主要是因为会在action中进行调用
 export function loadLanguageAsync (lang = defaultLang) {
   return new Promise(resolve => {
     // 缓存语言设置
     storage.set('lang', lang)
     if (i18n.locale !== lang) {
       if (!loadedLanguages.includes(lang)) {
+        // 这里主要是想按需加载国际化资源文件，如果已经加载过了国际化资源就不需要再重复加载了
         return import(/* webpackChunkName: "lang-[request]" */ `./lang/${lang}`).then(msg => {
           const locale = msg.default
           i18n.setLocaleMessage(lang, locale)

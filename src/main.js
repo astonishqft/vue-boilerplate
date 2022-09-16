@@ -10,6 +10,7 @@ import { VueAxios } from './utils/request'
 import './mock'
 import './permission' // 权限控制
 import './core/lazy_use' // 组件的按需引入 use lazy load components
+import './global.less' // 引入全局样式
 
 Vue.config.productionTip = false
 

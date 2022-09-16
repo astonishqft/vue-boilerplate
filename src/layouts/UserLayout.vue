@@ -2,7 +2,7 @@
   <div id="userLayout" class="user-layout-wrapper">
     <div class="container">
       <div class="user-layout-lang">
-        <select-lang />
+        <select-lang class="select-lang-trigger" />
       </div>
       <div class="user-layout-content">
         <div class="top">
@@ -30,6 +30,7 @@
 
 <script>
 import SelectLang from '@/components/SelectLang.vue'
+
 export default {
   name: 'UserLayout',
   components: {
@@ -58,6 +59,16 @@ export default {
         line-height: 44px;
         width: 100%;
         text-align: right;
+        .select-lang-trigger {
+          cursor: pointer;
+          padding: 12px;
+          margin-right: 24px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          vertical-align: middle;
+        }
       }
       .user-layout-content {
         padding: 32px 0 24px;
